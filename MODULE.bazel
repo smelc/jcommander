@@ -1,6 +1,7 @@
 module(
     name = "jcommander",
     version = "1.0.0",
+    bazel_compatibility = [">=8.3.0"],
 )
 
 bazel_dep(name = "rules_java", version = "7.6.0")

@@ -9,5 +9,18 @@ bazel_dep(name = "rules_java", version = "8.3.0")
 java = use_extension("@rules_java//java:extensions.bzl", "java")
 java.toolchain(
     version = "17",
+    source_version = "17",
+    target_version = "17",
 )
 use_repo(java, "java_toolchains")
+
+# java_toolchain(
+#     name = "toolchain",
+#     source_version = "17",
+#     target_version = "17",
+#     # bootclasspath = ["//tools/jdk:bootclasspath"],
+#     # xlint = [ "classfile", "divzero", "empty", "options", "path" ],
+#     # javacopts = [ "-g" ],
+#     # javabuilder = ":JavaBuilder_deploy.jar",
+# )
+

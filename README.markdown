@@ -1,6 +1,15 @@
 JCommander
 ==========
 
+## Why this fork?
+
+This fork is for me [@smelc](https://github.com/smelc) to learn [Bazel](https://bazel.build/). Bazel
+is overkill for JCommander's codebase, but it's a good training ground.
+
+The rest of the original JCommander README follows below.
+
+## JCommander
+
 This is an annotation based parameter parsing framework for Java 8 (JCommander 1.x), 11 (JCommander 2.x) and 17 (JCommander 3.x).
 
 Here is a quick example:

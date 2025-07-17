@@ -13,4 +13,5 @@ java_test(
             "@maven//:com_fasterxml_jackson_core_jackson_annotations",
            ],
     test_class = "com.beust.jcommander.JCommanderTest",
+    add_exports = [ "java.base/sun.reflect.annotation" ]
 )

@@ -12,6 +12,16 @@ java_test(
             "@maven//:com_fasterxml_jackson_core_jackson_core",
             "@maven//:com_fasterxml_jackson_core_jackson_annotations",
            ],
-    test_class = "com.beust.jcommander.JCommanderTest",
-    add_exports = [ "java.base/sun.reflect.annotation" ]
+    add_exports = [ "java.base/sun.reflect.annotation" ],
+
+    main_class = "org.testng.TestNG",
+    use_testrunner = False,
+    data = [
+      "src/test/resources/testng-single.xml",
+      "src/test/resources/testng.xml",
+    ],
+    args = [
+      "src/test/resources/testng-single.xml",
+      "src/test/resources/testng.xml",
+    ],
 )

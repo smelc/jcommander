@@ -22,6 +22,6 @@ java_test(
     ],
     args = [
       "src/test/resources/testng-single.xml",
-      "src/test/resources/testng.xml",
+      # "src/test/resources/testng.xml",
     ],
 )

@@ -16,9 +16,10 @@ java_test(
 
     main_class = "org.testng.TestNG",
     use_testrunner = False,
-    data = glob(["src/test/resources/**"]),
+    resources = glob(["src/test/resources/**"]),
+    data = glob(["src/test/resources/testng*.xml"]),
     args = [
-      # "src/test/resources/testng-single.xml",
+      "src/test/resources/testng-single.xml",
       "src/test/resources/testng.xml",
     ],
 )

@@ -14,13 +14,15 @@ java.toolchain(
 )
 use_repo(java, "java_toolchains")
 
-# java_toolchain(
-#     name = "toolchain",
-#     source_version = "17",
-#     target_version = "17",
-#     # bootclasspath = ["//tools/jdk:bootclasspath"],
-#     # xlint = [ "classfile", "divzero", "empty", "options", "path" ],
-#     # javacopts = [ "-g" ],
-#     # javabuilder = ":JavaBuilder_deploy.jar",
-# )
-
+bazel_dep(name = "rules_jvm_external", version = "6.8")
+maven = use_extension("@rules_jvm_external//:extensions.bzl", "maven")
+# Run `REPIN=1 bazel run @maven//:pin` to repin
+maven.install(
+    artifacts = [
+        "org.testng:testng:7.0.0",
+        "com.fasterxml.jackson.core:jackson-core:2.13.1",
+        "com.fasterxml.jackson.core:jackson-annotations:2.13.1",
+    ],
+    lock_file = "//:maven_install.json",
+)
+use_repo(maven, "maven")
